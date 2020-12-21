@@ -17,3 +17,5 @@ elif month in spring:
 
 elif month in summer:
     print('Сейчас лето, жарко!')
+else:
+    print("Введите корректное значение!")
