@@ -1,18 +1,17 @@
-car = list()
-for i in range(1, 4):
-    brand_car = input("Введите бренд авто : ")
+cars = list()
+for i in range(3):
+    brand_car = input("Введите марку авто : ")
     model_car = input("Введите модель авто : ")
     year_car = input("Введите год авто : ")
 
-    cars = {
-        'Brand': 'Subaru',
-        'Model': 'Impreza',
-        'Year': '2005',
-        }
+    car = {
+        'Brand': brand_car,
+        'Model': model_car,
+        'Year': year_car,
+    }
 
-    cars['Year'] = year_car
-    cars['Model'] = model_car
-    cars['Brand'] = brand_car
+    cars.append(car)
 
-    car.append(cars)
-print(car)
+print(cars[0])
+print(cars[1])
+print(cars[2])
