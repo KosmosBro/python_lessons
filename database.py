@@ -47,6 +47,7 @@ while True:
             print(index, ':', file)
 
     elif choise == '3':
+        new = input('Введите название файла')
         na = input('Введите имя : ')
         last = input('Введите фамилию : ')
         mid = input('Введите отчество : ')
@@ -66,7 +67,7 @@ while True:
         }
 
         filename = 'D:\Python\python_lessons\data' + '/'
-        with open(filename + na + '.json', 'w') as f:
+        with open(filename + new, 'w') as f:
             stroka = json.dumps(new_list)
             print(stroka + '\n')
             f.write(stroka)
