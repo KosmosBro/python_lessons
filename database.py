@@ -78,7 +78,7 @@ while True:
         for index, file in enumerate(directory):
             print(index, ':', file)
 
-        index = input('Введите ииндекс файла : ')
+        index = input('Введите индекс файла : ')
 
         path = 'data'
         direct = os.listdir(path)
