@@ -78,11 +78,11 @@ while True:
         for index, file in enumerate(directory):
             print(index, ':', file)
 
-        index = input('Введите имя файла : ')
+        index = input('Введите ииндекс файла : ')
 
         path = 'data'
         direct = os.listdir(path)
-        file = path + '/' + index
+        file = path + '/' + file
         print(file)
         with open(file) as f:
             print(f.read())
