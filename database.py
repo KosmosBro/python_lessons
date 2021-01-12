@@ -1,48 +1,92 @@
 import json
 import os
+import sys
 
-print("БАЗА ДАННЫХ ПРЕСТУПНИКА")
-file_name = input('Задайте имя файлу : ')
-name_crim = input('Введите имя : ')
-last_name = input('Введите фамилию : ')
-midleName = input('Введите отчество : ')
-year_crimm = input('Введите год рождения : ')
-month_crim = input('Введите месяц рождения : ')
-day_crim = input('Введите день рождения : ')
-adress_crim = input('Введите адрес : ')
-criminal_record = input('Введите статью : ')
+print('\n', "Здравствуйте , вас приветствует программа 'KOSMOS', '\n")
+print("Пожалуйста, выберете действие  ")
 
+write_new = print('1 - записать нового человека.')
+file = print('2 - просмотреть файлы в папке.')
+kreate = print('3 - редактировать файл.')
+view = print('4 - открыть файл')
+exit = print('5 - выйти из программы.')
 
-criminal = {
-    'Name': name_crim,
-    'Last_Name': last_name,
-    'Middle_Name': midleName,
-    'Year': year_crimm,
-    'Month': month_crim,
-    'Day': day_crim,
-    'Address': adress_crim,
-    'Record': criminal_record,
-}
+choise = input('выберете действие : ')
 
-filename = 'D:\Python\python_lessons\data\me'
+# while exit != choise:
+#     continue
 
-with open(filename, 'w') as f:
-    stroka = json.dumps(criminal)
-    print(stroka + '\n')
-    f.write(stroka)
+if choise == '1':
+    na = input('Введите имя : ')
+    last = input('Введите фамилию : ')
+    mid = input('Введите отчество : ')
+    old = input('Введите год рождения : ')
+    mon = input('Введите месяц рождения : ')
+    da = input('Введите день рождения : ')
+    adr = input('Введите адрес : ')
 
-os.rename('D:\Python\python_lessons\data\me', 'data' + '/' + file_name)
+    new_list = {
+        'Name': na,
+        'Lastname': last,
+        'Midlename': mid,
+        'Year': old,
+        'Month': mon,
+        'Day': da,
+        'Adres': adr
+    }
 
-dir_path = 'data'
-directory = os.listdir(dir_path)
-for index, file in enumerate(directory):
-    print(index, ':', file)
+    filename = 'D:\Python\python_lessons\data' + '/'
+    with open(filename + na + '.json', 'w') as f:
+        stroka = json.dumps(new_list)
+        print(stroka + '\n')
+        f.write(stroka)
 
-index = input('Введите имя файла : ')
+elif choise == '2':
+    dir_path = 'data'
+    directory = os.listdir(dir_path)
+    for index, file in enumerate(directory):
+        print(index, ':', file)
 
-path = 'data'
-direct = os.listdir(path)
-file = path + '/' + index
-print(file)
-with open(file) as f:
-    print(f.read())
+elif choise == '3':
+    na = input('Введите имя : ')
+    last = input('Введите фамилию : ')
+    mid = input('Введите отчество : ')
+    old = input('Введите год рождения : ')
+    mon = input('Введите месяц рождения : ')
+    da = input('Введите день рождения : ')
+    adr = input('Введите адрес : ')
+
+    new_list = {
+        'Name': na,
+        'Lastname': last,
+        'Midlename': mid,
+        'Year': old,
+        'Month': mon,
+        'Day': da,
+        'Adres': adr
+    }
+
+    filename = 'D:\Python\python_lessons\data' + '/'
+    with open(filename + na + '.json', 'w') as f:
+        stroka = json.dumps(new_list)
+        print(stroka + '\n')
+        f.write(stroka)
+
+elif choise == '4':
+    dir_path = 'data'
+    directory = os.listdir(dir_path)
+    for index, file in enumerate(directory):
+        print(index, ':', file)
+
+    index = input('Введите имя файла : ')
+
+    path = 'data'
+    direct = os.listdir(path)
+    file = path + '/' + index
+    print(file)
+    with open(file) as f:
+        print(f.read())
+
+elif choise == '5':
+    sys.exit()
+
