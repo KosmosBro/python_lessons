@@ -1,34 +1,19 @@
 
-class Salary:
-    zarplata = 12000
+class Worker:
+    salary = 20000
 
 
-class Driver(Salary):
-    def __init__(self, zarplata):
-        self.bila = 10000
-        self.zarplata = zarplata
+class Driver(Worker):
+    def __init__(self, a):
+        self.zarplata = 10000
         self.name = 'Anton'
 
     def work(self):
-        print('This is', self.name, '--', 'his salary was', self.bila, '---', 'his salary now :', self.zarplata)
-
-
-a = Driver(102000)
-a.work()
-
-
-class Worker(Salary):
-    def __init__(self, zarplata):
-        self.bila = 15000
-        self.zarplata = zarplata
-        self.name = 'Oleg'
-
-    def work(self):
-        print('This is', self.name, '--', 'his salary was', self.bila, '---', 'his salary now :', self.zarplata)
+        print('This is', self.name, '---', 'His salary was', self.zarplata, '---', 'his salary now', self.salary, '$')
 
     def __del__(self):
-        print('объект удаляется')
+        print('Работник уволен!')
 
 
-a = Worker(202000)
+a = Driver(20000)
 a.work()
