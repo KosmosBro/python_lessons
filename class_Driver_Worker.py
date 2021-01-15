@@ -4,8 +4,9 @@ class Worker:
 
 
 class Driver(Worker):
-    def __init__(self, a):
+    def __init__(self, salary):
         self.zarplata = 10000
+        self.salary = salary
         self.name = 'Anton'
 
     def work(self):
